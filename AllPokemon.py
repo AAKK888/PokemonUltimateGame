@@ -1,4 +1,3 @@
-#All of the pokemon
 import pygame
 import var
 from os import path
@@ -469,11 +468,11 @@ class GastlyEvo(pygame.sprite.Sprite):
         if self.level >= 40:
             self.name = 'gengar'
         if self.name == 'gastly':
-            self.health = 39
+            self.health = 30
         if self.name == 'haunter':
-            self.health = 58
+            self.health = 45
         if self.name == 'gengar':
-            self.health = 78
+            self.health = 60
         self.xspeed = 0
         self.yspeed = 0
 
@@ -502,7 +501,7 @@ class GastlyEvo(pygame.sprite.Sprite):
             self.rect.bottom = var.HEIGHT - 1
 
 
-class GrowltleEvo(pygame.sprite.Sprite):
+class GrowlitleEvo(pygame.sprite.Sprite):
     def __init__(self, startlevel):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface((20, 20))
@@ -515,18 +514,14 @@ class GrowltleEvo(pygame.sprite.Sprite):
         self.health = 0
         self.level_add = 0
         self.level = startlevel
-        if 5 <= self.level < 16:
-            self.name = 'charmander'
-        if 16 <= self.level < 32:
-            self.name = 'charmeleon'
+        if self.level < 16:
+            self.name = 'growlithe'
         if self.level >= 32:
-            self.name = 'charzard'
-        if self.name == 'charmamder':
-            self.health = 39
-        if self.name == 'charmeleon':
-            self.health = 58
-        if self.name == 'charzard':
-            self.health = 78
+            self.name = 'arcanine'
+        if self.name == 'growlithe':
+            self.health = 55
+        if self.name == 'arcanine':
+            self.health = 90
         self.xspeed = 0
         self.yspeed = 0
 
@@ -553,3 +548,53 @@ class GrowltleEvo(pygame.sprite.Sprite):
             self.rect.top = 1
         if self.rect.bottom > var.HEIGHT:
             self.rect.bottom = var.HEIGHT - 1
+
+
+class RioluEvo(pygame.sprite.Sprite):
+    def __init__(self, startlevel):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((20, 20))
+        self.image.fill(var.RED)
+        self.image.set_colorkey(var.BLACK)
+        self.rect = self.image.get_rect()
+        self.rect.center = (var.WIDTH / 2, var.HEIGHT / 2)
+        self.xspeed = 0
+        self.yspeed = 0
+        self.health = 0
+        self.level_add = 0
+        self.level = startlevel
+        if self.level < 16:
+            self.name = 'riolu'
+        if self.level >= 32:
+            self.name = 'lucario'
+        if self.name == 'riolu':
+            self.health = 55
+        if self.name == 'lucario':
+            self.health = 90
+        self.xspeed = 0
+        self.yspeed = 0
+
+    def update(self):
+        self.xspeed = 0
+        self.yspeed = 0
+        keystate = pygame.key.get_pressed()
+        if keystate[pygame.K_LEFT]:
+            self.xspeed = -8
+        if keystate[pygame.K_RIGHT]:
+            self.xspeed = 8
+        if keystate[pygame.K_UP]:
+            self.yspeed = -8
+        if keystate[pygame.K_DOWN]:
+            self.yspeed = 8
+
+        self.rect.x += self.xspeed
+        self.rect.y += self.yspeed
+        if self.rect.right > var.WIDTH:
+            self.rect.right = var.WIDTH - 1
+        if self.rect.left < 0:
+            self.rect.left = 1
+        if self.rect.top < 0:
+            self.rect.top = 1
+        if self.rect.bottom > var.HEIGHT:
+            self.rect.bottom = var.HEIGHT - 1
+            
