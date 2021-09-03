@@ -1,3 +1,4 @@
+#All of the pokemon
 import pygame
 import var
 from os import path
