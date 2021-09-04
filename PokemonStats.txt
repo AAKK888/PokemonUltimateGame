@@ -1,3 +1,11 @@
 Pichu - 
 Pikachu - 
 Raichu - 
+
+Bulbasaur - 
+Ivysaur - 
+Venesaur - 
+
+Charmander - 
+Chermeleon - 
+Charzard - 
