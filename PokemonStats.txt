@@ -9,3 +9,8 @@ Venesaur -
 Charmander - 
 Chermeleon - 
 Charzard - 
+
+Squirtle - 
+Warturtle - 
+Blastoise - 
+
