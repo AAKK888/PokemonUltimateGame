@@ -14,3 +14,12 @@ Squirtle - HP35
 Warturtle - HP58
 Blastoise - HP78
 
+Onix - HP35
+Steelix - HP75
+
+Fletchling - HP45
+Flitchlinder - HP62
+Talonflame - HP78
+
+Magikarp - HP20
+Gyarados - HP95
