@@ -1,16 +1,16 @@
-Pichu - 
-Pikachu - 
-Raichu - 
+Pichu - HP20
+Pikachu - HP35
+Raichu - HP60
 
-Bulbasaur - 
-Ivysaur - 
-Venesaur - 
+Bulbasaur - HP35
+Ivysaur - HP60
+Venesaur - HP80
 
-Charmander - 
-Chermeleon - 
-Charzard - 
+Charmander - HP39
+Chermeleon - HP58
+Charzard - HP78
 
-Squirtle - 
-Warturtle - 
-Blastoise - 
+Squirtle - HP35
+Warturtle - HP58
+Blastoise - HP78
 
