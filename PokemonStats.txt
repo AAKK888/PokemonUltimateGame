@@ -34,6 +34,7 @@ Gastly - HP30
 Haunter - HP45
 Gengar - HP60
 
+
 Growlitle - HP55
 Arcanine - HP90
 
