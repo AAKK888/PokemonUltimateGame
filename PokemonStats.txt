@@ -23,3 +23,13 @@ Talonflame - HP78
 
 Magikarp - HP20
 Gyarados - HP95
+
+Farfetch'd - HP35
+
+Elekid - HP20
+Electabuzz - HP35
+Electrive - HP60
+
+Gastly - HP30
+Haunter - HP45
+Gengar - HP60
