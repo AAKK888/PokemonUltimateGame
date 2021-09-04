@@ -33,3 +33,9 @@ Electrive - HP60
 Gastly - HP30
 Haunter - HP45
 Gengar - HP60
+
+Growlitle - HP55
+Arcanine - HP90
+
+Riolu - HP40
+Lucario - HP70
