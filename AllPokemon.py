@@ -38,23 +38,25 @@ class PichuEvo(pygame.sprite.Sprite):
             self.health = 35
         if self.name == 'raichu':
             self.health = 60
-            self.xspeed = 0
-            self.yspeed = 0
         self.xspeed = 0
         self.yspeed = 0
 
     def update(self):
         self.xspeed = 0
+        self.xspeed = 0
         self.yspeed = 0
         keystate = pygame.key.get_pressed()
-        if keystate[pygame.K_LEFT]:
+        if keystate[pygame.K_a]:
             self.xspeed = -8
-        if keystate[pygame.K_RIGHT]:
+        if keystate[pygame.K_d]:
             self.xspeed = 8
-        if keystate[pygame.K_UP]:
+        if keystate[pygame.K_w]:
             self.yspeed = -8
-        if keystate[pygame.K_DOWN]:
+        if keystate[pygame.K_s]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -108,6 +110,9 @@ class BulbasaurEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -161,6 +166,9 @@ class CharmanderEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -214,6 +222,9 @@ class SquirtleEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -263,6 +274,9 @@ class OnixEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -302,6 +316,22 @@ class FletchlingEvo(pygame.sprite.Sprite):
         if self.name == 'talonflame':
             self.health = 78
 
+    def update(self):
+        self.xspeed = 0
+        self.yspeed = 0
+        keystate = pygame.key.get_pressed()
+        if keystate[pygame.K_LEFT]:
+            self.xspeed = -8
+        if keystate[pygame.K_RIGHT]:
+            self.xspeed = 8
+        if keystate[pygame.K_UP]:
+            self.yspeed = -8
+        if keystate[pygame.K_DOWN]:
+            self.yspeed = 8
+            if self.yspeed != 0 and self.xspeed != 0:
+                self.yspeed /= 1.414
+                self.xspeed /= 1.414
+
 
 class MagikarpEvo(pygame.sprite.Sprite):
     def __init__(self, startlevel):
@@ -340,6 +370,9 @@ class MagikarpEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -382,6 +415,9 @@ class Farfetch_dEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -435,6 +471,9 @@ class ElekidEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -488,6 +527,9 @@ class GastlyEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -537,6 +579,9 @@ class GrowlitleEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -568,9 +613,9 @@ class RioluEvo(pygame.sprite.Sprite):
         if self.level >= 32:
             self.name = 'lucario'
         if self.name == 'riolu':
-            self.health = 55
+            self.health = 40
         if self.name == 'lucario':
-            self.health = 90
+            self.health = 70
         self.xspeed = 0
         self.yspeed = 0
 
@@ -586,6 +631,9 @@ class RioluEvo(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_DOWN]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
@@ -597,4 +645,3 @@ class RioluEvo(pygame.sprite.Sprite):
             self.rect.top = 1
         if self.rect.bottom > var.HEIGHT:
             self.rect.bottom = var.HEIGHT - 1
-            
