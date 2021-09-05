@@ -27,6 +27,9 @@ class Guy(pygame.sprite.Sprite):
             self.yspeed = -8
         if keystate[pygame.K_s]:
             self.yspeed = 8
+        if self.yspeed != 0 and self.xspeed != 0:
+            self.yspeed /= 1.414
+            self.xspeed /= 1.414
 
         self.rect.x += self.xspeed
         self.rect.y += self.yspeed
