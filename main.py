@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((var.WIDTH, var.HEIGHT))
 pygame.display.set_caption("Pokemon Game ")
 clock = pygame.time.Clock()
 
-background = pygame.image.load(path.join(img_dir, "ShySky.png")).convert()
+background = pygame.image.load(path.join(img_dir, "BackroundGrassyPlains.png")).convert()
 goodback = pygame.transform.scale(background, (var.WIDTH, var.HEIGHT))
 background_rect = goodback.get_rect()
 # screen.fill(var.background)
