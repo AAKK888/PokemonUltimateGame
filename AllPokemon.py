@@ -363,7 +363,7 @@ class Farfetch_dEvo(pygame.sprite.Sprite):
         self.rect.center = (var.WIDTH / 2, var.HEIGHT / 2)
         self.xspeed = 0
         self.yspeed = 0
-        self.health = 0
+        self.health = 35
         self.level_add = 0
         self.level = startlevel
         self.xspeed = 0
