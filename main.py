@@ -1,23 +1,24 @@
 # import random
+import time
 import pygame
 import var
-import time
-from Guy import *
 from AllPokemon import *
-from os import path
+from Guy import *
+
+screen = pygame.display.set_mode((var.WIDTH, var.HEIGHT))
+
 from Bushes import *
+from RoamingPokemon import *
 
 img_dir = path.join(path.dirname(__file__), 'img')
 pygame.init()
 pygame.mixer.init()
-screen = pygame.display.set_mode((var.WIDTH, var.HEIGHT))
 pygame.display.set_caption("Pokemon Game ")
 clock = pygame.time.Clock()
 
 background = pygame.image.load(path.join(img_dir, "BackroundGrassyPlains.png")).convert()
 goodback = pygame.transform.scale(background, (var.WIDTH, var.HEIGHT))
 background_rect = goodback.get_rect()
-# screen.fill(var.background)
 screen.fill(var.BLUE)
 
 font_name = pygame.font.match_font('arial')
@@ -34,6 +35,7 @@ def draw_text(text, size, x, y):
 all_sprites = pygame.sprite.Group()
 pokemongroup = pygame.sprite.Group()
 bushesgroup = pygame.sprite.Group()
+wildpokemongroup = pygame.sprite.Group()
 
 Bush = BushesAndStuff()
 # all_sprites.add(Bush)
@@ -86,6 +88,8 @@ all_sprites.add(MyCharac)
 
 Pikachu = PichuEvo(5)
 pokemongroup.add(Pikachu)
+Wild_Pichu = RoamPichu(5)
+wildpokemongroup.add(Wild_Pichu)
 
 running = True
 SeeWhoIsPokemon = 1
@@ -180,6 +184,8 @@ while running:
                     currentPokemon = Gastly.name
                 else:
                     pass
+            elif event.type == pygame.K_SPACE:
+                Pikachu.domove()
 
     hits = pygame.sprite.spritecollide(MyCharac, pokemongroup, False)
     if hits:
@@ -190,6 +196,8 @@ while running:
     all_sprites.update()
     pokemongroup.update()
     bushesgroup.update()
+    wildpokemongroup.update()
+    movegroup.update()
 
     # 3. Draw / render
     screen.fill(var.BLACK)
