@@ -1,11 +1,12 @@
-import pygame
-import var
 from os import path
+
+from Moves import *
 
 img_dir = path.join(path.dirname(__file__), 'img')
 pygame.init()
 # pichu_img = pygame.image.load(path.join(img_dir, "Pichu.png")).convert()
 # pikachu_img = pygame.image.load(path.join(img_dir, "Pikachu.png")).convert()
+movegroup = pygame.sprite.Group()
 
 
 class PichuEvo(pygame.sprite.Sprite):
@@ -46,13 +47,13 @@ class PichuEvo(pygame.sprite.Sprite):
         self.xspeed = 0
         self.yspeed = 0
         keystate = pygame.key.get_pressed()
-        if keystate[pygame.K_a]:
+        if keystate[pygame.K_LEFT]:
             self.xspeed = -8
-        if keystate[pygame.K_d]:
+        if keystate[pygame.K_RIGHT]:
             self.xspeed = 8
-        if keystate[pygame.K_w]:
+        if keystate[pygame.K_UP]:
             self.yspeed = -8
-        if keystate[pygame.K_s]:
+        if keystate[pygame.K_DOWN]:
             self.yspeed = 8
         if self.yspeed != 0 and self.xspeed != 0:
             self.yspeed /= 1.414
@@ -64,10 +65,14 @@ class PichuEvo(pygame.sprite.Sprite):
             self.rect.right = var.WIDTH - 1
         if self.rect.left < 0:
             self.rect.left = 1
-        if self.rect.top < 0:
-            self.rect.top = 1
+        if self.rect.top < 393:
+            self.rect.top = 393
         if self.rect.bottom > var.HEIGHT:
             self.rect.bottom = var.HEIGHT - 1
+
+    def domove(self):
+        amove = Moves(self.rect.centerx, self.rect.top)
+        movegroup.add(amove)
 
 
 class BulbasaurEvo(pygame.sprite.Sprite):
