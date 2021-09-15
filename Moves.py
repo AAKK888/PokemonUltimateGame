@@ -17,3 +17,5 @@ class Moves(pygame.sprite.Sprite):
         # kill if it moves off the top of the screen
         if self.rect.bottom < 0:
             self.kill()
+
+            
