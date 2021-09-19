@@ -206,6 +206,7 @@ while running:
     all_sprites.draw(screen)
     pokemongroup.draw(screen)
     bushesgroup.draw(screen)
+    wildpokemongroup.draw(screen)
 
     # after drawing everything, flip the display
     pygame.display.flip()
